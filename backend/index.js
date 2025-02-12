@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const bodyParser = require('body-parser');
 
+
 // Import your routes
 const userRoutes = require('./Routes/UserRoutes');
 const GetuserRoutes = require('./Routes/getUserRoute');
@@ -75,7 +76,7 @@ app.get('/', (req, res) => {
   res.send('Server is up and running!');
 });
 
-// Exporting the handler for Vercel to use
-module.exports = (req, res) => {
-  app(req, res);  // Vercel uses this handler
-};
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running on port ${PORT}`);
+});
