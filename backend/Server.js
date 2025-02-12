@@ -73,6 +73,10 @@ app.get('/api/uptime', (req, res) => {
   const uptime = (Date.now() - startTime) / 1000; // Uptime in seconds
   res.json({ uptime });
 });
+// Define a root route
+app.get('/', (req, res) => {
+  res.send('Server is up and running!');
+});
 
 
 
