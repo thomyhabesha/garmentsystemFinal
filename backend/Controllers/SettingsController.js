@@ -1,5 +1,5 @@
 const db = require('../Config/Db');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 // Update user account information based on role
 const updateUserSettings = async (req, res) => {

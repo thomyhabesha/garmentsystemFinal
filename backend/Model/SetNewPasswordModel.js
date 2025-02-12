@@ -1,5 +1,5 @@
 const db = require('../Config/Db');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 function updateUserPassword(email, newPassword, role, callback) {
   console.log("Role:", role); // Log the role
