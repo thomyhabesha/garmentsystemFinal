@@ -33,7 +33,7 @@ const Login = () => {
     const loginData = { username, password, role };
   
     try {
-      const response = await axios.post('http://localhost:5000/api/login', loginData);
+      const response = await axios.post('https://garmentsystemfinal.onrender.com/api/login', loginData);
       if (response.data.message) {
         const { UserID, Fname, Lname, email, user_role  } = response.data.user;
         const userData = { UserID, Fname, Lname, email, user_role , loginTime: Date.now() }; // Store login time

@@ -13,7 +13,7 @@ function ActivityLogs() {
   useEffect(() => {
     const fetchActivitylog = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/getActivitylogs");
+        const response = await axios.get("https://garmentsystemfinal.onrender.com/api/getActivitylogs");
         setactivitylog(response.data); 
       } catch (err) {
         console.error("Error fetching Activity logs:", err);

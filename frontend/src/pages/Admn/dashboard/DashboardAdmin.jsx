@@ -14,7 +14,7 @@ function DashboardAdmin() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/getusers");
+        const response = await axios.get("https://garmentsystemfinal.onrender.com/api/getusers");
         setUsers(response.data); 
       } catch (err) {
         console.error("Error fetching users:", err);

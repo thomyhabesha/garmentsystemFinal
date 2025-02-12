@@ -21,7 +21,7 @@ function DashboardInventory() {
   useEffect(() => {
     const fetchResources = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/resources');
+        const response = await axios.get('https://garmentsystemfinal.onrender.com/api/resources');
         setResources(response.data);
       } catch (error) {
         console.error('Error fetching resources:', error);
@@ -70,7 +70,7 @@ function DashboardInventory() {
         ResourcesID: selectedResource.ResourcesID, // Send ResourcesID, not the name
       };
 
-      await axios.post('http://localhost:5000/api/requestResource', payload);
+      await axios.post('https://garmentsystemfinal.onrender.com/api/requestResource', payload);
       setsubmitmessage('Date submitted successfully!');
       setsubmiting(false)
       
@@ -92,7 +92,7 @@ function DashboardInventory() {
         quantity: formData.quantity,
       };
 
-      await axios.post('http://localhost:5000/api/updateResourcestock', payload);
+      await axios.post('https://garmentsystemfinal.onrender.com/api/updateResourcestock', payload);
       setsubmitmessage('Date submitted successfully!');
       setsubmiting(false);
     } catch (error) {

@@ -9,7 +9,7 @@ function Communication({ receiverId }) {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/messages/${senderId}/${receiverId}`)
+    axios.get(`https://garmentsystemfinal.onrender.com/api/messages/${senderId}/${receiverId}`)
       .then(response => {
         if (response.data.success) {
           setMessages(response.data.messages);
@@ -21,7 +21,7 @@ function Communication({ receiverId }) {
   const sendMessage = () => {
     if (message.trim() === '') return;
 
-    axios.post('http://localhost:5000/api/send', { senderId, receiverId, message })
+    axios.post('https://garmentsystemfinal.onrender.com/api/send', { senderId, receiverId, message })
       .then(response => {
         if (response.data.success) {
           setMessages([...messages, { sender_id: senderId, message }]);

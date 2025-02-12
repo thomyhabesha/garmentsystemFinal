@@ -14,7 +14,7 @@ const ProdDashhead=({heading, user})=>{
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/resources/stats");
+        const response = await axios.get("https://garmentsystemfinal.onrender.com/api/resources/stats");
         setStats(response.data);
       } catch (error) {
         console.error("Error fetching resource stats:", error);

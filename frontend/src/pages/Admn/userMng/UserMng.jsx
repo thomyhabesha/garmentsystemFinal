@@ -12,7 +12,7 @@ function UserMng() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/getusers");
+        const response = await axios.get("https://garmentsystemfinal.onrender.com/api/getusers");
         setUsers(response.data); // Set fetched user data
       } catch (err) {
         console.error("Error fetching users:", err);
@@ -52,7 +52,7 @@ function UserMng() {
   // Update user
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/updateuser/${selectedUser.UserID}`, selectedUser);
+      await axios.put(`https://garmentsystemfinal.onrender.com/api/updateuser/${selectedUser.UserID}`, selectedUser);
       setUsers(users.map(user => user.UserID === selectedUser.UserID ? selectedUser : user)); // Update the user in the UI
       handleModalClose();
       alert("User updated successfully!");

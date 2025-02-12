@@ -26,11 +26,11 @@ function WasteManage() {
   const [summary, setSummary] = useState(0); // To store summary cost
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/resources")
+    axios.get("https://garmentsystemfinal.onrender.com/api/resources")
       .then((response) => setResources(response.data))
       .catch((error) => console.error("Error fetching resources: ", error));
 
-    axios.get("http://localhost:5000/api/suppliers")
+    axios.get("https://garmentsystemfinal.onrender.com/api/suppliers")
       .then((response) => setSuppliers(response.data))
       .catch((error) => console.error("Error fetching suppliers: ", error));
   }, []);
@@ -41,14 +41,14 @@ function WasteManage() {
 
   const fetchDefects = () => {
     axios
-      .get("http://localhost:5000/api/getdefects")
+      .get("https://garmentsystemfinal.onrender.com/api/getdefects")
       .then((response) => setDefects(response.data))
       .catch((error) => console.error("Error fetching defects:", error));
   };
 
   const fetchSummary = () => {
     axios
-      .get("http://localhost:5000/api/Defectsummary")
+      .get("https://garmentsystemfinal.onrender.com/api/Defectsummary")
       .then((response) => setSummary(response.data.totalCost))
       .catch((error) => console.error("Error fetching summary:", error));
   };
@@ -72,7 +72,7 @@ function WasteManage() {
     e.preventDefault();
     setSending(true);
     axios
-      .post("http://localhost:5000/api/garment_defects", formData)
+      .post("https://garmentsystemfinal.onrender.com/api/garment_defects", formData)
       .then(() => {
         setSending(false);
         fetchDefects();

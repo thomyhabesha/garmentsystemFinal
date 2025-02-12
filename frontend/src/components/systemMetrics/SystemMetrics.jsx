@@ -6,7 +6,7 @@ const SystemMetrics = () => {
   const [uptime, setUptime] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/uptime')
+    axios.get('https://garmentsystemfinal.onrender.com/api/uptime')
       .then(response => {
         setUptime(response.data.uptime);
       })

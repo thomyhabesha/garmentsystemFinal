@@ -19,7 +19,7 @@ const DashboardProdction = () => {
   const chartRef = useRef(null);
   // Fetch task counts from the Express API
   useEffect(() => {
-    fetch('http://localhost:5000/api/task-counts')
+    fetch('https://garmentsystemfinal.onrender.com/api/task-counts')
       .then((response) => response.json())
       .then((data) => {
         // Prepare the data for Chart.js

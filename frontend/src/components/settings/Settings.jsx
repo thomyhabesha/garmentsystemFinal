@@ -19,7 +19,7 @@ function Settings({ role }) {
     setMessageType('');
 
     try {
-      const response = await axios.put('http://localhost:5000/api/updateSettings', {
+      const response = await axios.put('https://garmentsystemfinal.onrender.com/api/updateSettings', {
         username,
         newUsername,
         oldPassword,

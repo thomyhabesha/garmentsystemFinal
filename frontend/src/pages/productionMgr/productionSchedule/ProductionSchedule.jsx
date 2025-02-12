@@ -40,7 +40,7 @@ function ProductionSchedule() {
 
 
 useEffect(() => {
-  axios.get('http://localhost:5000/api/production-schedule')
+  axios.get('https://garmentsystemfinal.onrender.com/api/production-schedule')
     .then((response) => {
       setData(response.data); // Set state with fetched data
     })
@@ -65,7 +65,7 @@ useEffect(() => {
 const handleSubmit = () => {
   setloading(true);
 
-  axios.put(`http://localhost:5000/api/production-scheduleUpdate/${selectedTask.Task}`, formData)
+  axios.put(`https://garmentsystemfinal.onrender.com/api/production-scheduleUpdate/${selectedTask.Task}`, formData)
     .then(() => {
       setloading(false);
       setPopup2(false);
@@ -73,7 +73,7 @@ const handleSubmit = () => {
       setEditStatusPopup(true);
 
       // Refresh the data
-      return axios.get('http://localhost:5000/api/production-schedule');
+      return axios.get('https://garmentsystemfinal.onrender.com/api/production-schedule');
     })
     .then((response) => {
       setData(response.data);
@@ -92,7 +92,7 @@ const handleSubmit = () => {
 
 
 useEffect(() => {
-  axios.get('http://localhost:5000/api/teams')
+  axios.get('https://garmentsystemfinal.onrender.com/api/teams')
     .then((response) => {
       setTeams(response.data); // Set the state with fetched data
       console.log(response.data); // Log data
@@ -106,7 +106,7 @@ useEffect(() => {
 const handleSubmitCreateTask = () => {
   setloading(true);
 
-  axios.post('http://localhost:5000/api/create-task-schedule', formDataCreate)
+  axios.post('https://garmentsystemfinal.onrender.com/api/create-task-schedule', formDataCreate)
     .then((response) => {
       setloading(false);
       setPopup2(false);

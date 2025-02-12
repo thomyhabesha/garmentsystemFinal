@@ -33,7 +33,7 @@ function ForgotPassword() {
     const handleEmailSubmit = async () => {
         try {
             setLoading(true);
-            const response = await axios.post('http://localhost:5000/api/resetPassword', { email });
+            const response = await axios.post('https://garmentsystemfinal.onrender.com/api/resetPassword', { email });
             setResetCodeSent(true);
             setEmailNotFoundError(false); 
         } catch (error) {
@@ -50,7 +50,7 @@ function ForgotPassword() {
     const handleVerificationSubmit = async () => {
         try {
             setLoading(true);
-            await axios.post('http://localhost:5000/api/verify', { email, code });
+            await axios.post('https://garmentsystemfinal.onrender.com/api/verify', { email, code });
             setPasswordResetSuccess(true);
             clearInterval(timer); 
         } catch (error) {
@@ -70,7 +70,7 @@ function ForgotPassword() {
                 setPasswordLengthError(true);
                 return;
             }
-            const response = await axios.post('http://localhost:5000/api/resetUserPassword', { email, newPassword, role });
+            const response = await axios.post('https://garmentsystemfinal.onrender.com/api/resetUserPassword', { email, newPassword, role });
            console.log("res: "+ response.data)
             setPasswordLengthError(false);
             setPasswordResetError(false);

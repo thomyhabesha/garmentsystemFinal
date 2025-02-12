@@ -10,7 +10,7 @@ const WorkflowVisualize = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/Workflowtasks');
+        const response = await fetch('https://garmentsystemfinal.onrender.com/api/Workflowtasks');
         const data = await response.json();
         console.log(data);
         setTasks(data);
